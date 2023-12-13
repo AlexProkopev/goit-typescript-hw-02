@@ -3,11 +3,8 @@
   Використовуйте generics, щоб вказати, що ці об'єкти можуть бути будь-якого типу.
 */
 
-type anyObject = {
-  [key:string]: any
-}
+type anyObject = Record<string,any>
 function merge <T extends anyObject>(objA:T, objB:T):T {
-
   return Object.assign(objA, objB);
 }
 const objC:anyObject = { name: 'name', color: null }
